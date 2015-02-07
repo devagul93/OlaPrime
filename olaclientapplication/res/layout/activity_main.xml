@@ -1,0 +1,79 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.olaclientapplication.MainActivity" >
+<LinearLayout
+    android:id="@+id/linearlayout_mainactivity_confirmride"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:layout_centerHorizontal="true"
+    android:orientation="horizontal" >
+
+    <Button
+        android:id="@+id/button_activity_main_cancel"
+        android:background="#000000"
+        android:textColor="#ffff00"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_weight="1"
+        android:text="Cancel" />
+
+    <Button
+        android:id="@+id/button_activity_main_confirm"
+        android:background="#000000"
+        android:textColor="#ffff00"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_weight="1"
+        android:text="Confirm" />
+</LinearLayout>
+    
+<LinearLayout
+    android:id="@+id/linearlayout_mainactivity"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:layout_centerHorizontal="true"
+    android:orientation="horizontal" >
+
+    <Button
+        android:id="@+id/button_activity_main_ride_later"
+        android:background="#000000"
+        android:textColor="#ffff00"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_weight="1"
+        android:text="Ride Later" />
+
+    <Button
+        android:id="@+id/button_activity_main_ride_now"
+        android:background="#000000"
+        android:textColor="#ffff00"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_weight="1"
+        android:text="Ride Now" />
+</LinearLayout>
+
+<ImageButton
+    android:id="@+id/imageButton_activity_main_rideestimate"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_above="@+id/linearlayout_mainactivity_confirmride"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentRight="true"
+    android:background="@drawable/ic_rideestimatemenu" />
+
+
+<ImageButton
+    android:id="@+id/imageButton_activity_main_categories"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_above="@+id/linearlayout_mainactivity"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentRight="true"
+    android:background="@drawable/ic_categories" />
+
+</RelativeLayout>
