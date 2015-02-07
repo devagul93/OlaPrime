@@ -121,8 +121,10 @@
     </RelativeLayout>
 
     <ListView
+        android:background="#000000"
+        
         android:id="@+id/drawerListView"
-        android:layout_width="wrap_content"
+        android:layout_width="240dp"
         android:layout_height="match_parent"
         android:layout_gravity="left"
         android:divider="@null" >

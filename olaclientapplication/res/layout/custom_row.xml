@@ -6,6 +6,7 @@
     android:orientation="vertical" >
  <TextView 
      android:text=""
+     android:textColor="#ffffff"
      android:textSize="14sp"
      android:id="@+id/textview_customrow"
      android:layout_width="wrap_content"

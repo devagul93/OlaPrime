@@ -39,15 +39,6 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_centerVertical="true"
-        android:text="723 RIDES"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -104,5 +95,14 @@
         android:layout_toRightOf="@+id/textView2"
         android:text="jhons feedback of mahadeva"
         android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:text="723 RIDES"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
 </RelativeLayout>
