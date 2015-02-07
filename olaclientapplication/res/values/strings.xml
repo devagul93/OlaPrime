@@ -3,7 +3,11 @@
 
     <string name="app_name">olaclientapplication</string>
     <string name="hello_world">Hello world!</string>
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">close navigation drawer</string>
     <string name="action_settings">Settings</string>
+    <string name="success_message">Your Booking has been confirmed. Driver will pick you up in 5 minutes. till then you can book drivers profile and reviews or Add your friends to share your ride.</string>
+    
 	<string-array name = "navlist">
 	    <item >BOOK MY RIDE</item>
 	    <item >MY RIDES</item>

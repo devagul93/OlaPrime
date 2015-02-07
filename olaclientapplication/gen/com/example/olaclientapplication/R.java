@@ -1637,8 +1637,9 @@ containing a value of this type.
         public static final int abc_textfield_search_material=0x7f020032;
         public static final int ic_categories=0x7f020033;
         public static final int ic_launcher=0x7f020034;
-        public static final int ic_rideestimatemenu=0x7f020035;
-        public static final int share_me=0x7f020036;
+        public static final int ic_menu_dark=0x7f020035;
+        public static final int ic_rideestimatemenu=0x7f020036;
+        public static final int share_me=0x7f020037;
     }
     public static final class id {
         public static final int Imagebutton_activity_main_ride_now=0x7f05004b;
@@ -1655,7 +1656,7 @@ containing a value of this type.
         public static final int action_mode_bar=0x7f05002e;
         public static final int action_mode_bar_stub=0x7f05002d;
         public static final int action_mode_close_button=0x7f050020;
-        public static final int action_settings=0x7f05004c;
+        public static final int action_settings=0x7f050053;
         public static final int activity_chooser_view_content=0x7f050021;
         public static final int always=0x7f05000d;
         public static final int beginning=0x7f050012;
@@ -1663,6 +1664,8 @@ containing a value of this type.
         public static final int button_activity_main_confirm=0x7f050043;
         public static final int button_activity_main_ride_later=0x7f050045;
         public static final int button_activity_main_ride_now=0x7f050046;
+        public static final int button_successdialog_main_addfriends=0x7f050052;
+        public static final int button_successdialog_main_ride_alone=0x7f050051;
         public static final int button_trackactivity_callDriver=0x7f05004a;
         public static final int checkbox=0x7f050029;
         public static final int collapseActionView=0x7f05000f;
@@ -1686,6 +1689,7 @@ containing a value of this type.
         public static final int imageButton_activity_main_rideestimate=0x7f050047;
         public static final int linearlayout_mainactivity=0x7f050044;
         public static final int linearlayout_mainactivity_confirmride=0x7f050041;
+        public static final int linearlayout_successdialog=0x7f050050;
         public static final int listMode=0x7f050002;
         public static final int list_item=0x7f050025;
         public static final int middle=0x7f050013;
@@ -1696,6 +1700,7 @@ containing a value of this type.
         public static final int progress_horizontal=0x7f05001d;
         public static final int radio=0x7f05002b;
         public static final int relativeLayout=0x7f050040;
+        public static final int relativeLayout_success=0x7f05004d;
         public static final int search_badge=0x7f050035;
         public static final int search_bar=0x7f050034;
         public static final int search_button=0x7f050036;
@@ -1713,6 +1718,9 @@ containing a value of this type.
         public static final int split_action_bar=0x7f050019;
         public static final int submit_area=0x7f05003c;
         public static final int tabMode=0x7f050003;
+        public static final int textView_dialog_sendpanictitle=0x7f05004e;
+        public static final int textView_succ_message=0x7f05004f;
+        public static final int textview_customrow=0x7f05004c;
         public static final int title=0x7f050027;
         public static final int up=0x7f050016;
         public static final int useLogo=0x7f050005;
@@ -1770,8 +1778,10 @@ containing a value of this type.
         public static final int abc_simple_dropdown_hint=0x7f030016;
         public static final int activity_main=0x7f030017;
         public static final int activity_trackride=0x7f030018;
-        public static final int support_simple_spinner_dropdown_item=0x7f030019;
-        public static final int view_driver_brief=0x7f03001a;
+        public static final int custom_row=0x7f030019;
+        public static final int dialog_success=0x7f03001a;
+        public static final int support_simple_spinner_dropdown_item=0x7f03001b;
+        public static final int view_driver_brief=0x7f03001c;
     }
     public static final class menu {
         public static final int main=0x7f0d0000;
@@ -1833,9 +1843,12 @@ containing a value of this type.
         /**  Content description for the Toolbar icon used to collapse an expanded action mode. [CHAR LIMIT=NONE] 
          */
         public static final int abc_toolbar_collapse_description=0x7f0a0004;
-        public static final int action_settings=0x7f0a0012;
+        public static final int action_settings=0x7f0a0014;
         public static final int app_name=0x7f0a0010;
+        public static final int drawer_close=0x7f0a0013;
+        public static final int drawer_open=0x7f0a0012;
         public static final int hello_world=0x7f0a0011;
+        public static final int success_message=0x7f0a0015;
     }
     public static final class style {
         /** 

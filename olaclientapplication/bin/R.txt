@@ -336,8 +336,9 @@ int drawable abc_textfield_search_default_mtrl_alpha 0x7f020031
 int drawable abc_textfield_search_material 0x7f020032
 int drawable ic_categories 0x7f020033
 int drawable ic_launcher 0x7f020034
-int drawable ic_rideestimatemenu 0x7f020035
-int drawable share_me 0x7f020036
+int drawable ic_menu_dark 0x7f020035
+int drawable ic_rideestimatemenu 0x7f020036
+int drawable share_me 0x7f020037
 int id Imagebutton_activity_main_ride_now 0x7f05004b
 int id action_bar 0x7f050031
 int id action_bar_activity_content 0x7f050018
@@ -352,7 +353,7 @@ int id action_menu_presenter 0x7f05001b
 int id action_mode_bar 0x7f05002e
 int id action_mode_bar_stub 0x7f05002d
 int id action_mode_close_button 0x7f050020
-int id action_settings 0x7f05004c
+int id action_settings 0x7f050053
 int id activity_chooser_view_content 0x7f050021
 int id always 0x7f05000d
 int id beginning 0x7f050012
@@ -360,6 +361,8 @@ int id button_activity_main_cancel 0x7f050042
 int id button_activity_main_confirm 0x7f050043
 int id button_activity_main_ride_later 0x7f050045
 int id button_activity_main_ride_now 0x7f050046
+int id button_successdialog_main_addfriends 0x7f050052
+int id button_successdialog_main_ride_alone 0x7f050051
 int id button_trackactivity_callDriver 0x7f05004a
 int id checkbox 0x7f050029
 int id collapseActionView 0x7f05000f
@@ -383,6 +386,7 @@ int id imageButton_activity_main_categories 0x7f050048
 int id imageButton_activity_main_rideestimate 0x7f050047
 int id linearlayout_mainactivity 0x7f050044
 int id linearlayout_mainactivity_confirmride 0x7f050041
+int id linearlayout_successdialog 0x7f050050
 int id listMode 0x7f050002
 int id list_item 0x7f050025
 int id middle 0x7f050013
@@ -393,6 +397,7 @@ int id progress_circular 0x7f05001c
 int id progress_horizontal 0x7f05001d
 int id radio 0x7f05002b
 int id relativeLayout 0x7f050040
+int id relativeLayout_success 0x7f05004d
 int id search_badge 0x7f050035
 int id search_bar 0x7f050034
 int id search_button 0x7f050036
@@ -410,6 +415,9 @@ int id showTitle 0x7f050008
 int id split_action_bar 0x7f050019
 int id submit_area 0x7f05003c
 int id tabMode 0x7f050003
+int id textView_dialog_sendpanictitle 0x7f05004e
+int id textView_succ_message 0x7f05004f
+int id textview_customrow 0x7f05004c
 int id title 0x7f050027
 int id up 0x7f050016
 int id useLogo 0x7f050005
@@ -441,8 +449,10 @@ int layout abc_search_view 0x7f030015
 int layout abc_simple_dropdown_hint 0x7f030016
 int layout activity_main 0x7f030017
 int layout activity_trackride 0x7f030018
-int layout support_simple_spinner_dropdown_item 0x7f030019
-int layout view_driver_brief 0x7f03001a
+int layout custom_row 0x7f030019
+int layout dialog_success 0x7f03001a
+int layout support_simple_spinner_dropdown_item 0x7f03001b
+int layout view_driver_brief 0x7f03001c
 int menu main 0x7f0d0000
 int string abc_action_bar_home_description 0x7f0a0001
 int string abc_action_bar_home_description_format 0x7f0a0005
@@ -460,9 +470,12 @@ int string abc_searchview_description_voice 0x7f0a000b
 int string abc_shareactionprovider_share_with 0x7f0a000f
 int string abc_shareactionprovider_share_with_application 0x7f0a000e
 int string abc_toolbar_collapse_description 0x7f0a0004
-int string action_settings 0x7f0a0012
+int string action_settings 0x7f0a0014
 int string app_name 0x7f0a0010
+int string drawer_close 0x7f0a0013
+int string drawer_open 0x7f0a0012
 int string hello_world 0x7f0a0011
+int string success_message 0x7f0a0015
 int style AppBaseTheme 0x7f0b00eb
 int style AppTheme 0x7f0b00ec
 int style Base_TextAppearance_AppCompat 0x7f0b0098

@@ -1,22 +1,27 @@
 package com.example.olaclientapplication;
 
-import com.example.olahack.BaseActivity.MyAdapterAppDrawer;
 
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.internal.widget.AdapterViewCompat;
 import android.support.v7.internal.widget.AdapterViewCompat.OnItemClickListener;
+import android.content.Context;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.TextView;
 
-public class MainActivity extends ActionBarActivity implements OnItemClickListener {
+public class MainActivity extends ActionBarActivity implements  android.widget.AdapterView.OnItemClickListener {
 
 	Button button_ridenow, button_ridelater, button_confirm, button_cancel;
 	ImageButton imagebutton_categories, imagebutton_rideestimatedummy;
@@ -33,8 +38,6 @@ public class MainActivity extends ActionBarActivity implements OnItemClickListen
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		titles = getResources().getStringArray(R.array.navlist);
-		listView = (ListView) findViewById(R.id.drawerListView);
-		
 		imagebutton_categories = (ImageButton) findViewById(R.id.imageButton_activity_main_categories);
 		imagebutton_rideestimatedummy = (ImageButton) findViewById(R.id.imageButton_activity_main_rideestimate);
 		imagebutton_rideestimatedummy.setVisibility(View.GONE);
@@ -45,6 +48,12 @@ public class MainActivity extends ActionBarActivity implements OnItemClickListen
 		button_cancel = (Button) findViewById(R.id.button_activity_main_cancel);
 		button_cancel.setVisibility(View.GONE);
 		button_confirm.setVisibility(View.GONE);
+		listView = (ListView) findViewById(R.id.drawerListView);
+		appdraweradapter = new MyAdapterAppDrawer(this);
+		listView.setAdapter(appdraweradapter);
+		listView.setOnItemClickListener(this);
+		drawerListener = new ActionBarDrawerToggle(MainActivity.this, drawerLayout, R.drawable.ic_menu_dark, R.string.drawer_open, R.string.drawer_close);
+		drawerLayout.setDrawerListener(drawerListener);
 		button_ridenow.setOnClickListener(new View.OnClickListener() {
 
 			@Override
@@ -67,8 +76,23 @@ public class MainActivity extends ActionBarActivity implements OnItemClickListen
 				startActivity(i);
 			}
 		});
+		getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 	}
 
+	@Override
+	protected void onPostCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onPostCreate(savedInstanceState);
+		drawerListener.syncState();
+	}
+	@Override
+	public void onConfigurationChanged(Configuration newConfig) {
+		// TODO Auto-generated method stub
+		super.onConfigurationChanged(newConfig);
+		drawerListener.onConfigurationChanged(newConfig);
+	}
+	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
@@ -82,6 +106,9 @@ public class MainActivity extends ActionBarActivity implements OnItemClickListen
 		// automatically handle clicks on the Home/Up button, so long
 		// as you specify a parent activity in AndroidManifest.xml.
 		int id = item.getItemId();
+		if(drawerListener.onOptionsItemSelected(item)){
+			return true;
+		}
 		if (id == R.id.action_settings) {
 			return true;
 		}
@@ -89,9 +116,76 @@ public class MainActivity extends ActionBarActivity implements OnItemClickListen
 	}
 
 	@Override
-	public void onItemClick(AdapterViewCompat<?> arg0, View arg1, int arg2,
-			long arg3) {
+	public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
 		// TODO Auto-generated method stub
-		
+		if (arg2 == 0) {
+			
+			/*FragmentTransaction trans = getSupportFragmentManager().beginTransaction();
+			trans.replace(R.id.relativelayout_activity_help, new ContactListFragment());
+			trans.commit();*/
+//			startActivity(new Intent(this, ContactListActivity.class));
+	//		drawerLayout.closeDrawers();
+			
+		} else if (arg2 == 1) {
+			//preset locations
+			/*FragmentTransaction trans = getSupportFragmentManager().beginTransaction();
+			trans.replace(R.id.relativelayout_activity_help, new PresetLocationsFragment());
+			trans.commit();
+			drawerLayout.closeDrawers();*/
+			
+		} else if (arg2 == 2) {
+			//startActivity(new Intent(this,SearchViewActivity.class));
+		} else if (arg2 == 3) {
+			//lalunchsettings();
+		} else if (arg2 == 4) {
+
+		}
 	}
+	
+	/***************************************** adapter for nav drawer ******************************************************/
+
+	class MyAdapterAppDrawer extends BaseAdapter {
+
+		String[] items;
+
+		public MyAdapterAppDrawer(Context context) {
+			items = context.getResources().getStringArray(R.array.navlist);
+
+		}
+
+		@Override
+		public int getCount() {
+			// TODO Auto-generated method stub
+			return items.length;
+		}
+
+		@Override
+		public Object getItem(int position) {
+			// TODO Auto-generated method stub
+			return titles[position];
+		}
+
+		@Override
+		public long getItemId(int position) {
+			// TODO Auto-generated method stub
+			return position;
+		}
+
+		@Override
+		public View getView(int position, View convertView, ViewGroup parent) {
+			// TODO Auto-generated method stub
+
+			View v = getLayoutInflater().inflate(R.layout.custom_row, parent,
+					false);
+			TextView textview_title = (TextView) v.findViewById(R.id.textview_customrow);
+			textview_title.setText(titles[position]);
+			return v;
+		}
+
+	}
+
+
+	
+	
+	
 }

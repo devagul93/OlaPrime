@@ -10,6 +10,8 @@ public class TrackRideActivity extends ActionBarActivity{
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_trackride);
+		SuccessDialog  dialog= new SuccessDialog();
+				dialog.show(getSupportFragmentManager(), "");
 	}
 	
 	

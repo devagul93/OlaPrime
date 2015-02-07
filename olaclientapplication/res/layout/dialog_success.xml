@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:background="#ffffff"
+    android:layout_height="wrap_content"
+    android:id="@+id/relativeLayout_success"
+    
+     >
+     <TextView
+         android:layout_marginTop="14dp"
+        android:textColor="#000000"
+        android:id="@+id/textView_dialog_sendpanictitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="SUCCESS"
+        android:gravity="center"
+        android:textSize="20sp" />
+
+    <TextView
+        android:textColor="#000000"
+        android:layout_marginBottom="14dp"
+        android:id="@+id/textView_succ_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView_dialog_sendpanictitle"
+        android:layout_marginTop="39dp"
+        android:text="@string/success_message" >
+    </TextView>
+
+    <LinearLayout
+        android:id="@+id/linearlayout_successdialog"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView_succ_message"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/button_successdialog_main_ride_alone"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:background="#000000"
+                android:text="RIDE ALONE"
+                android:textColor="#ffff00" />
+
+            <TextView 
+                android:layout_width="1dp"
+                android:layout_height="48dp"
+                android:background="#ffff00"
+                />
+            <Button
+                android:id="@+id/button_successdialog_main_addfriends"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:background="#000000"
+                android:text="ADD FRIENDS"
+                android:textColor="#ffff00" />
+        </LinearLayout>
+    
+
+</RelativeLayout>
