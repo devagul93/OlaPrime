@@ -18,6 +18,7 @@ import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -25,6 +26,7 @@ public class MainActivity extends ActionBarActivity implements  android.widget.A
 
 	Button button_ridenow, button_ridelater, button_confirm, button_cancel;
 	ImageButton imagebutton_categories, imagebutton_rideestimatedummy;
+	LinearLayout linlay_categories;
 	private DrawerLayout drawerLayout;
 	ListView listView;
 	private String[] titles;
@@ -38,7 +40,7 @@ public class MainActivity extends ActionBarActivity implements  android.widget.A
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		titles = getResources().getStringArray(R.array.navlist);
-		imagebutton_categories = (ImageButton) findViewById(R.id.imageButton_activity_main_categories);
+		linlay_categories = (LinearLayout) findViewById(R.id.linlayout_activity_main_rides);
 		imagebutton_rideestimatedummy = (ImageButton) findViewById(R.id.imageButton_activity_main_rideestimate);
 		imagebutton_rideestimatedummy.setVisibility(View.GONE);
 		drawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
@@ -62,8 +64,9 @@ public class MainActivity extends ActionBarActivity implements  android.widget.A
 				button_cancel.setVisibility(View.VISIBLE);
 				button_confirm.setVisibility(View.VISIBLE);
 				button_ridelater.setVisibility(View.GONE);
+				linlay_categories.setVisibility(View.GONE);
 				button_ridenow.setVisibility(View.GONE);
-				imagebutton_categories.setVisibility(View.GONE);
+	//			imagebutton_categories.setVisibility(View.GONE);
 				imagebutton_rideestimatedummy.setVisibility(View.VISIBLE);
 			}
 		});

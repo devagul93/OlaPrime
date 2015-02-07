@@ -74,17 +74,51 @@
             android:layout_alignParentRight="true"
             android:background="@drawable/ic_rideestimatemenu" />
 
-        <ImageButton
-            android:id="@+id/imageButton_activity_main_categories"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:background="#ffffff"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:id="@+id/linlayout_activity_main_rides"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_above="@+id/linearlayout_mainactivity"
             android:layout_alignParentLeft="true"
             android:layout_alignParentRight="true"
-            android:background="@drawable/ic_categories" />
-    </RelativeLayout>
+            android:orientation="horizontal" >
 
-    
+            <ImageButton
+                android:id="@+id/button_sedan"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#ffffff"
+                android:src="@drawable/ic_cab_selection_sedan_pressed" />
+
+            <ImageButton
+                android:id="@+id/button_mini"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#ffffff"
+                android:src="@drawable/ic_cab_selection_mini_selected" />
+
+            <ImageButton
+                android:id="@+id/button_prime"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#ffffff"
+                android:src="@drawable/ic_cab_selection_luxury_pressed" />
+
+            <ImageButton
+                android:id="@+id/button_pink"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#ffffff"
+                android:src="@drawable/ic_cab_selection_pink_selected" />
+        </LinearLayout>
+    </RelativeLayout>
 
     <ListView
         android:id="@+id/drawerListView"
