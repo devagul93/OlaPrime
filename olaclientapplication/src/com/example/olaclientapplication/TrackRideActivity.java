@@ -12,11 +12,19 @@ import android.widget.LinearLayout;
 
 public class TrackRideActivity extends ActionBarActivity {
 
+	LinearLayout linearlayout_fixed;
+	List<Contact> contactlisttrackactivity = new ArrayList<Contact>();
 	List<String> numberlist = new ArrayList<String>();
-	String[] numarray = {"8867400745","8754402809","9880002967"};
+	String[] numarray = {"8754402809","9880002967","8867400745"};
+	String[] olafriendnames = { "parth", "rahul","bharath"};
+	
+	int[] olafriendimages = {R.drawable.ic_parth, R.drawable.ic_rahul, R.drawable.ic_bharath};
 	public void fillnumberlist(){
+		contactlisttrackactivity.clear();
 		for(int i = 0;i<3;i++){
-			numberlist.add(numarray[i]);
+			
+			contactlisttrackactivity.add(i,new Contact(olafriendnames[i], numarray[i], olafriendimages[i]));
+		//	numberlist.add(numarray[i]);
 		}
 	}
 	
@@ -26,10 +34,13 @@ public class TrackRideActivity extends ActionBarActivity {
 		fillnumberlist();
 		
 		LinearLayout linearLayout_slideup;
+		
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_trackride);
-		SuccessDialog dialog = new SuccessDialog();
+		linearlayout_fixed = (LinearLayout) findViewById(R.id.fixedll);
+		linearlayout_fixed.setVisibility(View.GONE);
+		SuccessDialog dialog = new SuccessDialog(contactlisttrackactivity);
 		dialog.show(getSupportFragmentManager(), "");
 		linearLayout_slideup = (LinearLayout) findViewById(R.id.linearLayout1);
 		linearLayout_slideup.setOnClickListener(new View.OnClickListener() {

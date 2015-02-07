@@ -1646,18 +1646,21 @@ containing a value of this type.
         public static final int ic_add_small=0x7f020035;
         public static final int ic_auto_pressed=0x7f020036;
         public static final int ic_bg_cat=0x7f020037;
-        public static final int ic_cab_selection_luxury_pressed=0x7f020038;
-        public static final int ic_cab_selection_mini_selected=0x7f020039;
-        public static final int ic_cab_selection_pink_selected=0x7f02003a;
-        public static final int ic_cab_selection_sedan_pressed=0x7f02003b;
-        public static final int ic_categories=0x7f02003c;
-        public static final int ic_contact=0x7f02003d;
-        public static final int ic_cross_red=0x7f02003e;
-        public static final int ic_cross_toosmall=0x7f02003f;
-        public static final int ic_launcher=0x7f020040;
-        public static final int ic_menu_dark=0x7f020041;
-        public static final int ic_rideestimatemenu=0x7f020042;
-        public static final int share_me=0x7f020043;
+        public static final int ic_bharath=0x7f020038;
+        public static final int ic_cab_selection_luxury_pressed=0x7f020039;
+        public static final int ic_cab_selection_mini_selected=0x7f02003a;
+        public static final int ic_cab_selection_pink_selected=0x7f02003b;
+        public static final int ic_cab_selection_sedan_pressed=0x7f02003c;
+        public static final int ic_categories=0x7f02003d;
+        public static final int ic_contact=0x7f02003e;
+        public static final int ic_cross_red=0x7f02003f;
+        public static final int ic_cross_toosmall=0x7f020040;
+        public static final int ic_launcher=0x7f020041;
+        public static final int ic_menu_dark=0x7f020042;
+        public static final int ic_parth=0x7f020043;
+        public static final int ic_rahul=0x7f020044;
+        public static final int ic_rideestimatemenu=0x7f020045;
+        public static final int share_me=0x7f020046;
     }
     public static final class id {
         public static final int Imagebutton_activity_main_ride_now=0x7f060052;
@@ -1934,9 +1937,31 @@ containing a value of this type.
         res/values-v11/styles.xml on API 14+ devices.
     
  API 14 theme customizations can go here. 
+
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    
+
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        
+
+        Base application theme for API 11+. This theme completely replaces
+        AppBaseTheme from res/values/styles.xml on API 11+ devices.
+    
+ API 11 theme customizations can go here. 
+
+        Base application theme for API 14+. This theme completely replaces
+        AppBaseTheme from BOTH res/values/styles.xml and
+        res/values-v11/styles.xml on API 14+ devices.
+    
+ API 14 theme customizations can go here. 
          */
         public static final int AppBaseTheme=0x7f0c00eb;
         /**  Application theme. 
+ All customizations that are NOT specific to a particular API-level can go here. 
+ Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
         public static final int AppTheme=0x7f0c00ec;

@@ -95,9 +95,9 @@
             android:id="@+id/llperson1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginRight="7dp"
+            android:layout_marginRight="3dp"
             android:layout_weight="1"
-            android:background="#5000ff00"
+            android:background="#50ff0000"
             android:orientation="horizontal" >
 
             <TextView
@@ -120,10 +120,10 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:layout_marginRight="7dp"
+            android:layout_marginRight="3dp"
             android:layout_toLeftOf="@+id/llperson3"
             android:layout_weight="1"
-            android:background="#5000ff00"
+            android:background="#50ff0000"
             android:orientation="horizontal" >
 
             <TextView
@@ -146,9 +146,9 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:layout_marginRight="7dp"
+            android:layout_marginRight="3dp"
             android:layout_weight="1"
-            android:background="#5000ff00"
+            android:background="#50ff0000"
             android:orientation="horizontal" >
 
             <TextView

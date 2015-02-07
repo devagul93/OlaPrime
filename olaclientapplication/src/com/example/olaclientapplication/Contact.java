@@ -1,12 +1,16 @@
 package com.example.olaclientapplication;
 
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 
 public class Contact {
 
-	public Contact(String name){
+	public Contact(String name, String number, int image){
 		CONTACT_NAME = name;
+		CONTACT_NUMBER = number;
+		Imageres = image;
 	}
+	int Imageres;
 	public boolean isSelected;
 	public long CONTACT_ID;
 	public String CONTACT_NUMBER;

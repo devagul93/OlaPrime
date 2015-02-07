@@ -5,6 +5,7 @@ import java.util.List;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.DialogFragment;
@@ -23,6 +24,7 @@ import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 
 import com.example.olaclientapplication.ListDialogSent.MyArrayAdapter;
+import com.paresh.RoundImage;
 import com.parse.ParseInstallation;
 import com.parse.ParseObject;
 import com.parse.ParsePush;
@@ -39,12 +41,15 @@ public class ListDialogSent extends DialogFragment implements
 
 	public interface DialogActionListenerSent {
 		public void onSendClickListener(DialogFragment dialog);
-
+		
+	}
+	public ListDialogSent(List<Contact> contacts){
+		this.lsit_contact = contacts;
 	}
 
 	public void fill_contacts() {
 		for (int i = 0; i < 3; i++) {
-			lsit_contact.add(new Contact("contact person" + i));
+	//		lsit_contact.add(new Contact("contact person" + i));
 		}
 	}
 
@@ -53,7 +58,7 @@ public class ListDialogSent extends DialogFragment implements
 	public void onAttach(Activity activity) {
 		// TODO Auto-generated method stub
 		super.onAttach(activity);
-		fill_contacts();
+//		fill_contacts();
 		TrackRideActivity trackactivity = (TrackRideActivity) activity;
 		this.numberlist = trackactivity.numberlist;
 		
@@ -94,8 +99,8 @@ public class ListDialogSent extends DialogFragment implements
 				// TODO Auto-generated method stub
 				// mlistener.onSendClickListener(PanicDialog.this);
 				// fire a listview dialog
-				for(String s: numberlist){
-					String number = s;
+				for(Contact c: lsit_contact){
+					String number = c.CONTACT_NUMBER;
 					Toast.makeText(getActivity(), "dhakka de diya",
 							Toast.LENGTH_SHORT).show();
 					ParseQuery userQuery = new ParseQuery<ParseObject>("userclass");
@@ -108,7 +113,7 @@ public class ListDialogSent extends DialogFragment implements
 					// Send push notification to query
 					ParsePush push = new ParsePush();
 					push.setQuery(pushQuery); // Set our Installation query
-					push.setMessage("AAaaaaa Aaaa AAaaaah aa aa");
+					push.setMessage("Devansh has requested for ola share");
 					push.sendInBackground();	
 				}
 				dismiss();
@@ -144,6 +149,7 @@ public class ListDialogSent extends DialogFragment implements
 
 			LayoutInflater inflater = getActivity().getLayoutInflater();
 			View v = inflater.inflate(R.layout.item_contactlist, parent, false);
+			ImageView imageview_contactimage = (ImageView) v.findViewById(R.id.imageView_itemcontactlist);
 			ImageView imageview_item_cross = (ImageView) v
 					.findViewById(R.id.imageView_itemcontactlist_cross);
 			ImageView imageview_item_add = (ImageView) v
@@ -152,6 +158,8 @@ public class ListDialogSent extends DialogFragment implements
 					.findViewById(R.id.textView_itemcontactlist);
 			textview_item_contactname
 					.setText(lsit_contact.get(position).CONTACT_NAME.toString());
+			Drawable drawable = getResources().getDrawable(lsit_contact.get(position).Imageres);
+			imageview_contactimage.setImageDrawable(RoundImage.getRoundDrawable(drawable));
 			if (lsit_contact.get(position).isSelected) {
 				imageview_item_cross.setVisibility(View.VISIBLE);
 				imageview_item_add.setVisibility(View.GONE);

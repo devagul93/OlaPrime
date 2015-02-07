@@ -2,10 +2,14 @@ package com.example.olaclientapplication;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import com.paresh.RoundImage;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -25,6 +29,10 @@ import android.widget.TextView;
 
 public class ListDialog extends DialogFragment implements OnItemClickListener{
 	
+	String[] numarray = {"8754402809","9880002967","8867400745"};
+	String[] olafriendnames = { "parth", "rahul, bharath"};
+	int[] olafriendimages = {R.drawable.ic_parth, R.drawable.ic_rahul, R.drawable.ic_bharath};
+	List<String> contactnames = new ArrayList<String>();
 	MyArrayAdapter adapter;
 	Button button_invite, button_cancel;
 	ListView listview_contactlist;
@@ -33,9 +41,13 @@ public class ListDialog extends DialogFragment implements OnItemClickListener{
 		public void onSendClickListener(DialogFragment dialog);
 			
 		}
+	public ListDialog(List<Contact> contacts){
+		this.lsit_contact = contacts;
+	}
 	public void fill_contacts(){
-		for(int i= 0;i<10;i++){
-			lsit_contact.add(new Contact("contact person" + i));
+		lsit_contact.clear();
+		for(int i= 0;i<3;i++){
+			lsit_contact.add(i,new Contact(olafriendnames[i], numarray[i], olafriendimages[i]));
 		}
 	}
 		
@@ -45,7 +57,9 @@ public class ListDialog extends DialogFragment implements OnItemClickListener{
 	public void onAttach(Activity activity) {
 		// TODO Auto-generated method stub
 		super.onAttach(activity);
-		fill_contacts();
+		TrackRideActivity trackactivity = (TrackRideActivity) activity;
+		//trackactivity.numberlist
+		//fill_contacts();
 		/*try{
 		mlistener = (DialogActionListener)activity;
 		}
@@ -70,7 +84,7 @@ public class ListDialog extends DialogFragment implements OnItemClickListener{
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				ListDialogSent dialogsent = new ListDialogSent();
+				ListDialogSent dialogsent = new ListDialogSent(lsit_contact);
 				dialogsent.show(getActivity().getSupportFragmentManager(), "");
 				getActivity().getSupportFragmentManager().beginTransaction().remove(ListDialog.this).commit();
 			}
@@ -116,10 +130,13 @@ public class ListDialog extends DialogFragment implements OnItemClickListener{
 			
 				LayoutInflater inflater  = getActivity().getLayoutInflater();
 				View v= inflater.inflate(R.layout.item_contactlist, parent, false);
+				ImageView imageview_contactimage = (ImageView) v.findViewById(R.id.imageView_itemcontactlist);
 				ImageView imageview_item_cross  = (ImageView) v.findViewById(R.id.imageView_itemcontactlist_cross);
 				ImageView imageview_item_add = (ImageView) v.findViewById(R.id.imageView_itemcontactlist_add);
 				TextView textview_item_contactname = (TextView) v.findViewById(R.id.textView_itemcontactlist);
 				textview_item_contactname.setText(lsit_contact.get(position).CONTACT_NAME.toString());
+				Drawable drawable = getResources().getDrawable(lsit_contact.get(position).Imageres);
+				imageview_contactimage.setImageDrawable(RoundImage.getRoundDrawable(drawable));
 				if(lsit_contact.get(position).isSelected){
 					imageview_item_cross.setVisibility(View.VISIBLE);
 					imageview_item_add.setVisibility(View.GONE);
