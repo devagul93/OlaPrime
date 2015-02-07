@@ -1,5 +1,8 @@
 package com.example.olaclientapplication;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -9,9 +12,19 @@ import android.widget.LinearLayout;
 
 public class TrackRideActivity extends ActionBarActivity {
 
+	List<String> numberlist = new ArrayList<String>();
+	String[] numarray = {"8867400745","8754402809","9880002967"};
+	public void fillnumberlist(){
+		for(int i = 0;i<3;i++){
+			numberlist.add(numarray[i]);
+		}
+	}
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-
+		numberlist.clear();
+		fillnumberlist();
+		
 		LinearLayout linearLayout_slideup;
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);

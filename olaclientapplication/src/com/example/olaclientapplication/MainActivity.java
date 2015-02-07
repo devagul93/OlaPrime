@@ -1,6 +1,10 @@
 package com.example.olaclientapplication;
 
 
+import com.parse.Parse;
+import com.parse.ParseInstallation;
+import com.parse.ParseObject;
+
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
@@ -39,6 +43,15 @@ public class MainActivity extends ActionBarActivity implements  android.widget.A
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		Parse.initialize(this, "luzR0xGWsehSOv0ScGcxnmbVmFe2Enir91ktQgfJ",
+				"4aWdo1kuq8Q45DdbH7TftPVCoLZChuzRJk9HqljT");
+		ParseInstallation installation = ParseInstallation
+				.getCurrentInstallation();
+		//change the object for different users here;
+		installation.put("userclass",
+				ParseObject.createWithoutData("userclass", "ZDYAPVwEC5"));
+		installation.saveInBackground();
+		
 		titles = getResources().getStringArray(R.array.navlist);
 		linlay_categories = (LinearLayout) findViewById(R.id.linlayout_activity_main_rides);
 		imagebutton_rideestimatedummy = (ImageButton) findViewById(R.id.imageButton_activity_main_rideestimate);

@@ -19,13 +19,19 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 
 import com.example.olaclientapplication.ListDialogSent.MyArrayAdapter;
+import com.parse.ParseInstallation;
+import com.parse.ParseObject;
+import com.parse.ParsePush;
+import com.parse.ParseQuery;
 
 public class ListDialogSent extends DialogFragment implements
 		OnItemClickListener {
 
+	List<String> numberlist = new ArrayList<String>();
 	MyArrayAdapter adapter;
 	Button button_invite, button_cancel;
 	ListView listview_contactlist;
@@ -48,6 +54,9 @@ public class ListDialogSent extends DialogFragment implements
 		// TODO Auto-generated method stub
 		super.onAttach(activity);
 		fill_contacts();
+		TrackRideActivity trackactivity = (TrackRideActivity) activity;
+		this.numberlist = trackactivity.numberlist;
+		
 		/*
 		 * try{ mlistener = (DialogActionListener)activity; }
 		 * catch(ClassCastException e) { // The activity doesn't implement the
@@ -75,7 +84,7 @@ public class ListDialogSent extends DialogFragment implements
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-
+				dismiss();
 			}
 		});
 		button_cancel.setOnClickListener(new View.OnClickListener() {
@@ -85,6 +94,23 @@ public class ListDialogSent extends DialogFragment implements
 				// TODO Auto-generated method stub
 				// mlistener.onSendClickListener(PanicDialog.this);
 				// fire a listview dialog
+				for(String s: numberlist){
+					String number = s;
+					Toast.makeText(getActivity(), "dhakka de diya",
+							Toast.LENGTH_SHORT).show();
+					ParseQuery userQuery = new ParseQuery<ParseObject>("userclass");
+					// userQuery.whereWithinMiles("location", stadiumLocation, 1.0)
+					userQuery.whereEqualTo("phoneNumber", number);
+					// Find devices associated with these users
+					ParseQuery pushQuery = ParseInstallation.getQuery();
+					pushQuery.whereMatchesQuery("userclass", userQuery);
+					
+					// Send push notification to query
+					ParsePush push = new ParsePush();
+					push.setQuery(pushQuery); // Set our Installation query
+					push.setMessage("AAaaaaa Aaaa AAaaaah aa aa");
+					push.sendInBackground();	
+				}
 				dismiss();
 			}
 		});
