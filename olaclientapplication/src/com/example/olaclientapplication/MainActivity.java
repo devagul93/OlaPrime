@@ -1,6 +1,12 @@
 package com.example.olaclientapplication;
 
+import com.example.olahack.BaseActivity.MyAdapterAppDrawer;
+
+import android.support.v4.app.ActionBarDrawerToggle;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.internal.widget.AdapterViewCompat;
+import android.support.v7.internal.widget.AdapterViewCompat.OnItemClickListener;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -8,19 +14,31 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ListView;
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends ActionBarActivity implements OnItemClickListener {
 
 	Button button_ridenow, button_ridelater, button_confirm, button_cancel;
 	ImageButton imagebutton_categories, imagebutton_rideestimatedummy;
+	private DrawerLayout drawerLayout;
+	ListView listView;
+	private String[] titles;
+	MyAdapterAppDrawer appdraweradapter;
+
+	ActionBarDrawerToggle drawerListener;
+
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		titles = getResources().getStringArray(R.array.navlist);
+		listView = (ListView) findViewById(R.id.drawerListView);
+		
 		imagebutton_categories = (ImageButton) findViewById(R.id.imageButton_activity_main_categories);
 		imagebutton_rideestimatedummy = (ImageButton) findViewById(R.id.imageButton_activity_main_rideestimate);
 		imagebutton_rideestimatedummy.setVisibility(View.GONE);
+		drawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
 		button_ridenow = (Button) findViewById(R.id.button_activity_main_ride_now);
 		button_confirm = (Button) findViewById(R.id.button_activity_main_confirm);
 		button_ridelater = (Button) findViewById(R.id.button_activity_main_ride_later);
@@ -68,5 +86,12 @@ public class MainActivity extends ActionBarActivity {
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
+	}
+
+	@Override
+	public void onItemClick(AdapterViewCompat<?> arg0, View arg1, int arg2,
+			long arg3) {
+		// TODO Auto-generated method stub
+		
 	}
 }

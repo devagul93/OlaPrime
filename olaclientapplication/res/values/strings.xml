@@ -4,5 +4,15 @@
     <string name="app_name">olaclientapplication</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-
+	<string-array name = "navlist">
+	    <item >BOOK MY RIDE</item>
+	    <item >MY RIDES</item>
+	    <item >OLA MONEY</item>
+	    <item >OLA FRIENDS</item>
+	    <item >RATE CARD</item>
+	    <item >EMERGENCY CONTACT</item>
+	    <item >REPORT ISSUE</item>
+	    <item >CALL SUPPORT</item>
+	    
+	</string-array>
 </resources>

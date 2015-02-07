@@ -3,5 +3,30 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
     
+<LinearLayout
+    android:id="@+id/linearlayout_mainactivity"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:layout_centerHorizontal="true"
+    android:orientation="horizontal" >
 
+    <Button
+        android:id="@+id/button_trackactivity_callDriver"
+        android:background="#000000"
+        android:textColor="#ffff00"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_weight=".75"
+        android:text="Call Driver" />
+
+    <ImageButton
+        android:id="@+id/Imagebutton_activity_main_ride_now"
+        
+        android:textColor="#ffff00"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_weight=".25"
+        android:background="@drawable/share_me" />
+</LinearLayout>
 </RelativeLayout>

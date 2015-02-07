@@ -1,79 +1,99 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/drawerLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.olaclientapplication.MainActivity" >
-<LinearLayout
-    android:id="@+id/linearlayout_mainactivity_confirmride"
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:layout_alignParentBottom="true"
-    android:layout_centerHorizontal="true"
-    android:orientation="horizontal" >
+    android:layout_gravity="left" >
 
-    <Button
-        android:id="@+id/button_activity_main_cancel"
-        android:background="#000000"
-        android:textColor="#ffff00"
-        android:layout_width="0dp"
-        android:layout_height="48dp"
-        android:layout_weight="1"
-        android:text="Cancel" />
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.example.olaclientapplication.MainActivity" >
 
-    <Button
-        android:id="@+id/button_activity_main_confirm"
-        android:background="#000000"
-        android:textColor="#ffff00"
-        android:layout_width="0dp"
-        android:layout_height="48dp"
-        android:layout_weight="1"
-        android:text="Confirm" />
-</LinearLayout>
-    
-<LinearLayout
-    android:id="@+id/linearlayout_mainactivity"
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:layout_alignParentBottom="true"
-    android:layout_centerHorizontal="true"
-    android:orientation="horizontal" >
+        <LinearLayout
+            android:id="@+id/linearlayout_mainactivity_confirmride"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal" >
 
-    <Button
-        android:id="@+id/button_activity_main_ride_later"
-        android:background="#000000"
-        android:textColor="#ffff00"
-        android:layout_width="0dp"
-        android:layout_height="48dp"
-        android:layout_weight="1"
-        android:text="Ride Later" />
+            <Button
+                android:id="@+id/button_activity_main_cancel"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:background="#000000"
+                android:text="Cancel"
+                android:textColor="#ffff00" />
 
-    <Button
-        android:id="@+id/button_activity_main_ride_now"
-        android:background="#000000"
-        android:textColor="#ffff00"
-        android:layout_width="0dp"
-        android:layout_height="48dp"
-        android:layout_weight="1"
-        android:text="Ride Now" />
-</LinearLayout>
+            <Button
+                android:id="@+id/button_activity_main_confirm"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:background="#000000"
+                android:text="Confirm"
+                android:textColor="#ffff00" />
+        </LinearLayout>
 
-<ImageButton
-    android:id="@+id/imageButton_activity_main_rideestimate"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_above="@+id/linearlayout_mainactivity_confirmride"
-    android:layout_alignParentLeft="true"
-    android:layout_alignParentRight="true"
-    android:background="@drawable/ic_rideestimatemenu" />
+        <LinearLayout
+            android:id="@+id/linearlayout_mainactivity"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal" >
 
+            <Button
+                android:id="@+id/button_activity_main_ride_later"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:background="#000000"
+                android:text="Ride Later"
+                android:textColor="#ffff00" />
 
-<ImageButton
-    android:id="@+id/imageButton_activity_main_categories"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_above="@+id/linearlayout_mainactivity"
-    android:layout_alignParentLeft="true"
-    android:layout_alignParentRight="true"
-    android:background="@drawable/ic_categories" />
+            <Button
+                android:id="@+id/button_activity_main_ride_now"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:background="#000000"
+                android:text="Ride Now"
+                android:textColor="#ffff00" />
+        </LinearLayout>
 
-</RelativeLayout>
+        <ImageButton
+            android:id="@+id/imageButton_activity_main_rideestimate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/linearlayout_mainactivity_confirmride"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/ic_rideestimatemenu" />
+
+        <ImageButton
+            android:id="@+id/imageButton_activity_main_categories"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/linearlayout_mainactivity"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/ic_categories" />
+    </RelativeLayout>
+
+    <RelativeLayout>
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/drawerListView"
+        android:layout_width="48dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="right"
+        android:divider="@null" >
+    </ListView>
+
+</android.support.v4.widget.DrawerLayout>
