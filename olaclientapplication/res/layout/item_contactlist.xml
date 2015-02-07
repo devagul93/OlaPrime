@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:id="@+id/imageView_itemcontactlist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="14dp"
+        android:layout_marginTop="14dp"
+        android:src="@drawable/ic_contact" />
+
+    <TextView
+        android:id="@+id/textView_itemcontactlist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/imageView_itemcontactlist"
+        android:layout_marginLeft="14dp"
+        android:layout_toRightOf="@+id/imageView_itemcontactlist"
+        android:text="contact name" />
+
+    <ImageView
+        android:id="@+id/imageView_itemcontactlist_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView_itemcontactlist"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/ic_add_small" />
+
+    <ImageView
+        android:id="@+id/imageView_itemcontactlist_cross"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/imageView_itemcontactlist_add"
+        android:src="@drawable/ic_cross_red" />
+
+</RelativeLayout>

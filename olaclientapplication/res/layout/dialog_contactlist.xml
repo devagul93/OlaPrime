@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+     <TextView
+         android:layout_marginTop="14dp"
+        android:textColor="#000000"
+        android:id="@+id/textView_listdialog_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="SUCCESS"
+        android:gravity="center"
+        android:textSize="20sp" />
+
+    <ListView
+        android:id="@+id/listView_dialog_contactlist"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/linearlayout_listdialog"
+        android:layout_below="@+id/textView_listdialog_title" >
+
+    </ListView>
+
+    <LinearLayout
+        android:id="@+id/linearlayout_listdialog"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/button_listdialog_cancel"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:background="#000000"
+            android:text="CANCEL"
+            android:textColor="#ffff00" />
+
+        <TextView
+            android:layout_width="1dp"
+            android:layout_height="48dp"
+            android:background="#ffff00" />
+
+        <Button
+            android:id="@+id/button_listdialog_invite"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:background="#000000"
+            android:text="INVITE"
+            android:textColor="#ffff00" />
+    </LinearLayout>
+
+</RelativeLayout>

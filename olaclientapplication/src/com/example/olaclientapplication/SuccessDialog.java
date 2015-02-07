@@ -54,6 +54,9 @@ public class SuccessDialog extends DialogFragment{
 				// TODO Auto-generated method stub
 				//mlistener.onSendClickListener(PanicDialog.this);
 				//fire a listview dialog
+				ListDialog dialog = new ListDialog();
+				dialog.show(getActivity().getSupportFragmentManager(), "");
+				getActivity().getSupportFragmentManager().beginTransaction().remove(SuccessDialog.this).commit();
 			dismiss();
 			}
 		});
