@@ -2119,7 +2119,7 @@ containing a value of this type.
         public static final int action_mode_bar=0x7f090042;
         public static final int action_mode_bar_stub=0x7f090041;
         public static final int action_mode_close_button=0x7f090034;
-        public static final int action_settings=0x7f090096;
+        public static final int action_settings=0x7f09008f;
         public static final int activity_chooser_view_content=0x7f090035;
         public static final int adjust_height=0x7f090002;
         public static final int adjust_width=0x7f090001;
@@ -2150,7 +2150,7 @@ containing a value of this type.
         public static final int default_activity_button=0x7f090038;
         public static final int dialog=0x7f090024;
         public static final int disableHome=0x7f09001e;
-        public static final int distance=0x7f090091;
+        public static final int distance=0x7f090088;
         public static final int donate_with_google=0x7f090013;
         public static final int drawerLayout=0x7f090053;
         public static final int drawerListView=0x7f090063;
@@ -2171,19 +2171,16 @@ containing a value of this type.
         public static final int ifRoom=0x7f090020;
         public static final int image=0x7f090037;
         public static final int imageButton_activity_main_rideestimate=0x7f09005d;
-        public static final int imageView1=0x7f090085;
-        public static final int imageView2=0x7f090087;
-        public static final int imageView3=0x7f09008a;
-        public static final int imageView_itemcontactlist=0x7f090092;
-        public static final int imageView_itemcontactlist_add=0x7f090095;
-        public static final int imageView_itemcontactlist_cross=0x7f090094;
+        public static final int imageView1=0x7f09008e;
+        public static final int imageView_itemcontactlist=0x7f090089;
+        public static final int imageView_itemcontactlist_add=0x7f09008c;
+        public static final int imageView_itemcontactlist_cross=0x7f09008b;
         public static final int imageViewp1=0x7f090071;
         public static final int imageViewp2=0x7f090075;
         public static final int imageViewp3=0x7f090077;
         public static final int imageview_activitytrackride_drivierimage=0x7f09006a;
-        public static final int latitude=0x7f09008f;
+        public static final int latitude=0x7f090086;
         public static final int linearLayout1=0x7f090069;
-        public static final int linearLayout2=0x7f09008d;
         public static final int linearlayout_listdialog=0x7f09007c;
         public static final int linearlayout_mainactivity=0x7f09005a;
         public static final int linearlayout_mainactivity_confirmride=0x7f090057;
@@ -2195,7 +2192,7 @@ containing a value of this type.
         public static final int llperson1=0x7f09006f;
         public static final int llperson2=0x7f090072;
         public static final int llperson3=0x7f090073;
-        public static final int longitude=0x7f090090;
+        public static final int longitude=0x7f090087;
         public static final int map=0x7f090055;
         public static final int match_parent=0x7f09000e;
         public static final int middle=0x7f090027;
@@ -2234,13 +2231,9 @@ containing a value of this type.
         public static final int submit_area=0x7f090050;
         public static final int tabMode=0x7f090018;
         public static final int terrain=0x7f090005;
-        public static final int textView1=0x7f090086;
-        public static final int textView2=0x7f090089;
-        public static final int textView3=0x7f090088;
-        public static final int textView4=0x7f09008c;
-        public static final int textView5=0x7f09008b;
+        public static final int textView1=0x7f09008d;
         public static final int textView_dialog_sendpanictitle=0x7f090080;
-        public static final int textView_itemcontactlist=0x7f090093;
+        public static final int textView_itemcontactlist=0x7f09008a;
         public static final int textView_listdialog_title=0x7f09007a;
         public static final int textView_succ_message=0x7f090081;
         public static final int textViewp1=0x7f090070;
@@ -2253,7 +2246,7 @@ containing a value of this type.
         public static final int title=0x7f09003b;
         public static final int up=0x7f09002a;
         public static final int useLogo=0x7f090019;
-        public static final int userschoice=0x7f09008e;
+        public static final int userschoice=0x7f090085;
         public static final int withText=0x7f090022;
         public static final int wrap_content=0x7f09000f;
     }
