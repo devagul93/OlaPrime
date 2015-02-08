@@ -50,6 +50,9 @@ public class ListDialog extends DialogFragment implements OnItemClickListener{
 			lsit_contact.add(i,new Contact(olafriendnames[i], numarray[i], olafriendimages[i]));
 		}
 	}
+	public ListDialog(){
+		
+	}
 		
 		
 		//DialogActionListener mlistener;
@@ -154,7 +157,12 @@ public class ListDialog extends DialogFragment implements OnItemClickListener{
 	@Override
 	public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
 		// TODO Auto-generated method stub
-		
+		if(lsit_contact.get(arg2).isSelected){
+			lsit_contact.get(arg2).isSelected = false;
+		}else
+			lsit_contact.get(arg2).isSelected = true;
+		adapter.notifyDataSetChanged();
 	}
+	
 
 }

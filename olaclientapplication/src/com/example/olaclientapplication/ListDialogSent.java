@@ -37,14 +37,34 @@ public class ListDialogSent extends DialogFragment implements
 	MyArrayAdapter adapter;
 	Button button_invite, button_cancel;
 	ListView listview_contactlist;
+	List<Contact> lsit_contact_unfiltered = new ArrayList<Contact>();
 	List<Contact> lsit_contact = new ArrayList<Contact>();
 
 	public interface DialogActionListenerSent {
-		public void onSendClickListener(DialogFragment dialog);
+		public void onSendClickListener(List<Contact> selected_contacts);
 		
 	}
+	DialogActionListenerSent mListener;
 	public ListDialogSent(List<Contact> contacts){
-		this.lsit_contact = contacts;
+		lsit_contact_unfiltered.clear();
+		this.lsit_contact_unfiltered = contacts;
+		
+		filterlsitcontacts();
+		
+	}
+
+	private void filterlsitcontacts() {
+		// TODO Auto-generated method stub
+		lsit_contact.clear();
+		int i = 0; 
+		for(Contact c: lsit_contact_unfiltered){
+			//Toast.makeText(getActivity(), ""+c.CONTACT_NAME+" "+ c.CONTACT_NUMBER, Toast.LENGTH_SHORT).show();
+			if(lsit_contact_unfiltered.get(i).isSelected == true){
+				lsit_contact.add(c);
+				
+			}
+			i++;
+		}
 	}
 
 	public void fill_contacts() {
@@ -59,8 +79,11 @@ public class ListDialogSent extends DialogFragment implements
 		// TODO Auto-generated method stub
 		super.onAttach(activity);
 //		fill_contacts();
-		TrackRideActivity trackactivity = (TrackRideActivity) activity;
-		this.numberlist = trackactivity.numberlist;
+		mListener = (DialogActionListenerSent) activity;
+		//this.numberlist = trackactivity.numberlist;
+		adapter = new MyArrayAdapter(getActivity(), R.layout.item_contactlist,
+				lsit_contact);
+		
 		
 		/*
 		 * try{ mlistener = (DialogActionListener)activity; }
@@ -78,6 +101,8 @@ public class ListDialogSent extends DialogFragment implements
 		View view = inflater.inflate(R.layout.dialog_contactlist, null, false);
 		listview_contactlist = (ListView) view
 				.findViewById(R.id.listView_dialog_contactlist);
+		listview_contactlist.setAdapter(adapter);
+		listview_contactlist.setOnItemClickListener(this);
 		button_cancel = (Button) view
 				.findViewById(R.id.button_listdialog_cancel);
 		button_invite = (Button) view
@@ -99,6 +124,7 @@ public class ListDialogSent extends DialogFragment implements
 				// TODO Auto-generated method stub
 				// mlistener.onSendClickListener(PanicDialog.this);
 				// fire a listview dialog
+				mListener.onSendClickListener(lsit_contact);
 				for(Contact c: lsit_contact){
 					String number = c.CONTACT_NUMBER;
 					Toast.makeText(getActivity(), "dhakka de diya",
@@ -128,11 +154,13 @@ public class ListDialogSent extends DialogFragment implements
 	public void onActivityCreated(Bundle arg0) {
 		// TODO Auto-generated method stub
 		super.onActivityCreated(arg0);
-
-		adapter = new MyArrayAdapter(getActivity(), R.layout.item_contactlist,
-				lsit_contact);
+		//adapter.notifyDataSetChanged();
 		listview_contactlist.setAdapter(adapter);
-		listview_contactlist.setOnItemClickListener(this);
+
+		
+	}
+	public ListDialogSent(){
+		
 	}
 
 	public class MyArrayAdapter extends ArrayAdapter {

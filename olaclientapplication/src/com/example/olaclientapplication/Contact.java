@@ -9,6 +9,7 @@ public class Contact {
 		CONTACT_NAME = name;
 		CONTACT_NUMBER = number;
 		Imageres = image;
+		isSelected = false;
 	}
 	int Imageres;
 	public boolean isSelected;
