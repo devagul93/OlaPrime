@@ -34,12 +34,6 @@
             android:background="@drawable/share_me"
             android:textColor="#ffff00" />
     </LinearLayout>
-    <Button
-            android:id="@+id/show_path"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/linearLayout1"
-            android:text="Show Path" />
 
     <LinearLayout
         android:background="#ffffff"
@@ -178,5 +172,13 @@
                 android:src="@drawable/ic_cross_toosmall" />
         </RelativeLayout>
     </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/show_path"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/linearLayout1"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/ic_safe" />
 
 </RelativeLayout>

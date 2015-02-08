@@ -6,7 +6,6 @@
 
     <ImageView
         android:id="@+id/imageView_itemcontactlist"
-        
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_alignParentLeft="true"
@@ -17,31 +16,30 @@
 
     <TextView
         android:id="@+id/textView_itemcontactlist"
-        android:layout_marginBottom="7dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/imageView_itemcontactlist"
+        android:layout_marginBottom="7dp"
         android:layout_marginLeft="14dp"
         android:layout_toRightOf="@+id/imageView_itemcontactlist"
         android:text="contact name" />
 
+    <ImageView
+        android:id="@+id/imageView_itemcontactlist_cross"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView_itemcontactlist"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="16dp"
+        android:src="@drawable/greencheck" />
     <ImageView
         android:id="@+id/imageView_itemcontactlist_add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/textView_itemcontactlist"
         android:layout_alignParentRight="true"
-        android:src="@drawable/ic_add_small" />
-
-    <ImageView
-        android:layout_marginBottom="7dp"
-        android:layout_marginRight="7dp"
-        android:id="@+id/imageView_itemcontactlist_cross"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="gone"
-        android:layout_alignParentRight="true"
-        android:layout_alignTop="@+id/imageView_itemcontactlist_add"
-        android:src="@drawable/ic_cross_red" />
+        android:layout_marginRight="16dp"
+        android:src="@drawable/add" />
 
 </RelativeLayout>

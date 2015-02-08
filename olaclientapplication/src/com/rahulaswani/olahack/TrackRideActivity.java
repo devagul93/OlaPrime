@@ -30,6 +30,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -39,7 +40,8 @@ public class TrackRideActivity extends ActionBarActivity implements
 		OnMapReadyCallback {
 
 	List<Contact> friend = new ArrayList<Contact>();
-	LinearLayout linearlayout_fixed;
+	LinearLayout linearlayout_fixed, linearlayout_driver;
+	LinearLayout linearLayout_slideup;
 	RelativeLayout linearlayout_f1, linearlayout_f2, linearlayout_f3;
 	List<Contact> contactlisttrackactivity = new ArrayList<Contact>();
 	List<String> numberlist = new ArrayList<String>();
@@ -55,7 +57,7 @@ public class TrackRideActivity extends ActionBarActivity implements
 	EditText latitude;
 	EditText longitude;
 	TextView showdist;
-	Button ShowDist;
+	ImageButton ShowDist;
 	double lat = 000.000;
 	double longi= 000.000;
 	float distance,distfrmmid;
@@ -147,11 +149,12 @@ public class TrackRideActivity extends ActionBarActivity implements
 		numberlist.clear();
 		fillnumberlist();
 
-		LinearLayout linearLayout_slideup;
+		
 
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_trackride);
+		
 		linearlayout_f1 = (RelativeLayout) findViewById(R.id.llperson1);
 		linearlayout_f2 = (RelativeLayout) findViewById(R.id.llperson2);
 		linearlayout_f3 = (RelativeLayout) findViewById(R.id.llperson3);
@@ -217,7 +220,7 @@ public class TrackRideActivity extends ActionBarActivity implements
         myMap.addMarker(new MarkerOptions().title("You").position(A));
         myMap.addMarker(new MarkerOptions().title("Destination").position(B));
         
-        ShowDist = (Button)findViewById(R.id.show_path);
+        ShowDist = (ImageButton)findViewById(R.id.show_path);
         ShowDist.setOnClickListener(new OnClickListener() {
 			
 			@Override
