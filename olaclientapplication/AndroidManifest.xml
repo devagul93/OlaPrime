@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.olaclientapplication"
+    package="com.rahulaswani.olahack"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -8,7 +8,21 @@
         android:minSdkVersion="14"
         android:targetSdkVersion="21" />
     
+<permission
+        android:name="com.rahulaswani.learnmapapi.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature" />
 
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <uses-permission android:name="com.rahulaswani.learnmapapi.permission.MAPS_RECEIVE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 <uses-permission android:name="android.permission.WAKE_LOCK" />
@@ -22,8 +36,8 @@
   to match your app's package name + ".permission.C2D_MESSAGE".
 -->
 <permission android:protectionLevel="signature"
-    android:name="com.example.olaclientapplication.permission.C2D_MESSAGE" />
-<uses-permission android:name="com.example.olaclientapplication.permission.C2D_MESSAGE" />
+    android:name="com.rahulaswani.olahack.permission.C2D_MESSAGE" />
+<uses-permission android:name="com.rahulaswani.olahack.permission.C2D_MESSAGE" />
    
     <application
         android:allowBackup="true"
@@ -31,7 +45,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".MainActivity"
+            android:name="com.rahulaswani.olahack.MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -40,7 +54,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".TrackRideActivity"
+            android:name="com.rahulaswani.olahack.TrackRideActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -49,7 +63,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".PushRecieveActivity"
+            android:name="com.rahulaswani.olahack.PushRecieveActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -65,7 +79,7 @@
     <action android:name="android.intent.action.USER_PRESENT" />
   </intent-filter>
 </receiver>
-<receiver android:name="com.example.olaclientapplication.MyReciever"
+<receiver android:name="com.rahulaswani.olahack.MyReciever"
     android:exported="false">
   <intent-filter>
     <action android:name="com.parse.push.intent.RECEIVE" />
@@ -85,6 +99,13 @@
     <category android:name="com.example.olaclientapplication" />
   </intent-filter>
 </receiver>
+
+ <meta-data android:name="com.google.android.gms.version"
+        android:value="@integer/google_play_services_version" />
+        
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyD2mYwQtZ40GQDXgEGLUSWWoNWqb0AWzHQ" />
     </application>
 
 </manifest>

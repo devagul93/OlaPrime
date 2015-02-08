@@ -4,6 +4,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
     <LinearLayout
         android:id="@+id/linearlayout_mainactivity"
         android:layout_width="fill_parent"
@@ -29,8 +34,15 @@
             android:background="@drawable/share_me"
             android:textColor="#ffff00" />
     </LinearLayout>
+    <Button
+            android:id="@+id/show_path"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/linearLayout1"
+            android:text="Show Path" />
 
     <LinearLayout
+        android:background="#ffffff"
         android:id="@+id/linearLayout1"
         android:layout_width="fill_parent"
         android:layout_height="100dp"
