@@ -12,6 +12,7 @@ import android.support.v7.internal.widget.AdapterViewCompat;
 import android.support.v7.internal.widget.AdapterViewCompat.OnItemClickListener;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.Menu;
@@ -52,6 +53,14 @@ public class MainActivity extends ActionBarActivity implements  android.widget.A
 				ParseObject.createWithoutData("userclass", "ZDYAPVwEC5"));
 		installation.saveInBackground();
 		
+		SharedPreferences pref = this.getSharedPreferences("MyPrefs", MODE_PRIVATE);
+		SharedPreferences.Editor editor = pref.edit();
+		if(pref.getBoolean("showDialog", false)){
+			InviteDialog dialog = new InviteDialog();
+			dialog.show(getSupportFragmentManager(), "");
+			editor.putBoolean("showDialog", false);
+			editor.commit();
+		}
 		titles = getResources().getStringArray(R.array.navlist);
 		linlay_categories = (LinearLayout) findViewById(R.id.linlayout_activity_main_rides);
 		imagebutton_rideestimatedummy = (ImageButton) findViewById(R.id.imageButton_activity_main_rideestimate);

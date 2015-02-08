@@ -41,7 +41,7 @@ public class InviteDialog extends DialogFragment {
 	public void onAttach(Activity activity) {
 		// TODO Auto-generated method stub
 		super.onAttach(activity);
-		TrackRideActivity trackacitivity = (TrackRideActivity) activity;
+		//TrackRideActivity trackacitivity = (TrackRideActivity) activity;
 		// this.contactlist = trackacitivity.contactlisttrackactivity;
 		/*
 		 * try{ mlistener = (DialogActionListener)activity; }
