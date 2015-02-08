@@ -7,8 +7,8 @@
     <uses-sdk
         android:minSdkVersion="14"
         android:targetSdkVersion="21" />
-    
-<permission
+
+    <permission
         android:name="com.rahulaswani.learnmapapi.permission.MAPS_RECEIVE"
         android:protectionLevel="signature" />
 
@@ -19,34 +19,38 @@
     <uses-permission android:name="com.rahulaswani.learnmapapi.permission.MAPS_RECEIVE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
-<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-<uses-permission android:name="android.permission.WAKE_LOCK" />
-<uses-permission android:name="android.permission.VIBRATE" />
-<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-<uses-permission android:name="android.permission.GET_ACCOUNTS" />
-<uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
- 
-<!--
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+
+    <!--
   IMPORTANT: Change "com.parse.starter.permission.C2D_MESSAGE" in the lines below
   to match your app's package name + ".permission.C2D_MESSAGE".
--->
-<permission android:protectionLevel="signature"
-    android:name="com.rahulaswani.olahack.permission.C2D_MESSAGE" />
-<uses-permission android:name="com.rahulaswani.olahack.permission.C2D_MESSAGE" />
-   
+    -->
+    <permission
+        android:name="com.rahulaswani.olahack.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.rahulaswani.olahack.permission.C2D_MESSAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/Theme.AppCompat.Light" >
         <activity
             android:name="com.rahulaswani.olahack.MainActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+           
+             >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -55,7 +59,9 @@
         </activity>
         <activity
             android:name="com.rahulaswani.olahack.TrackRideActivity"
-            android:label="@string/app_name" >
+            android:label="Track Ride"
+            >
+             
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -64,7 +70,8 @@
         </activity>
         <activity
             android:name="com.rahulaswani.olahack.PushRecieveActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+             >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -73,36 +80,37 @@
         </activity>
 
         <service android:name="com.parse.PushService" />
-<receiver android:name="com.parse.ParseBroadcastReceiver">
-  <intent-filter>
-    <action android:name="android.intent.action.BOOT_COMPLETED" />
-    <action android:name="android.intent.action.USER_PRESENT" />
-  </intent-filter>
-</receiver>
-<receiver android:name="com.rahulaswani.olahack.MyReciever"
-    android:exported="false">
-  <intent-filter>
-    <action android:name="com.parse.push.intent.RECEIVE" />
-    <action android:name="com.parse.push.intent.DELETE" />
-    <action android:name="com.parse.push.intent.OPEN" />
-    </intent-filter>
-</receiver>
-<receiver android:name="com.parse.GcmBroadcastReceiver"
-    android:permission="com.google.android.c2dm.permission.SEND">
-  <intent-filter>
-    <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-    <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
- 
-    <!--
-      IMPORTANT: Change "com.parse.starter" to match your app's package name.
-    -->
-    <category android:name="com.example.olaclientapplication" />
-  </intent-filter>
-</receiver>
 
- <meta-data android:name="com.google.android.gms.version"
-        android:value="@integer/google_play_services_version" />
-        
+        <receiver android:name="com.parse.ParseBroadcastReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.rahulaswani.olahack.MyReciever"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="com.parse.push.intent.RECEIVE" />
+                <action android:name="com.parse.push.intent.DELETE" />
+                <action android:name="com.parse.push.intent.OPEN" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.parse.GcmBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+
+<!--       IMPORTANT: Change "com.parse.starter" to match your app's package name. -->
+                <category android:name="com.rahulaswani.olahack" />
+            </intent-filter>
+        </receiver>
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="AIzaSyD2mYwQtZ40GQDXgEGLUSWWoNWqb0AWzHQ" />

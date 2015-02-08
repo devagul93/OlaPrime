@@ -12,7 +12,7 @@ public final class Manifest {
         /** 
   IMPORTANT: Change "com.parse.starter.permission.C2D_MESSAGE" in the lines below
   to match your app's package name + ".permission.C2D_MESSAGE".
-
+    
          */
         public static final String C2D_MESSAGE="com.rahulaswani.olahack.permission.C2D_MESSAGE";
         public static final String MAPS_RECEIVE="com.rahulaswani.learnmapapi.permission.MAPS_RECEIVE";
