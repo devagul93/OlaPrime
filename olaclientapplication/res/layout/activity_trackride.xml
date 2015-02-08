@@ -181,4 +181,13 @@
         android:layout_alignParentRight="true"
         android:background="@drawable/ic_safe" />
 
+    <Button
+        android:id="@+id/button_endride"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/show_path"
+        android:layout_centerHorizontal="true"
+        android:text="EndRide" />
+
 </RelativeLayout>

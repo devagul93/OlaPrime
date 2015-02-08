@@ -39,6 +39,7 @@ public class TrackRideActivity extends ActionBarActivity implements
 		DialogActionListenerSent, OnMapClickListener,OnMapLongClickListener, OnCameraChangeListener,
 		OnMapReadyCallback {
 
+	Button buttonendride;
 	List<Contact> friend = new ArrayList<Contact>();
 	LinearLayout linearlayout_fixed, linearlayout_driver;
 	LinearLayout linearLayout_slideup;
@@ -176,6 +177,23 @@ public class TrackRideActivity extends ActionBarActivity implements
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				DriverDetailsFragment fragment = new DriverDetailsFragment();
+				FragmentManager manager = getSupportFragmentManager();
+				FragmentTransaction transaction = manager.beginTransaction();
+				transaction.add(R.id.relativeLayout_parent_trackeractivity,
+						fragment, "ContactlistFragment");
+				transaction.setCustomAnimations(R.anim.slide_in_up,
+						R.anim.slide_out_up);
+				transaction.addToBackStack(null);
+				transaction.commit();
+			}
+		});
+		buttonendride = (Button) findViewById(R.id.button_endride);
+		buttonendride.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				FragmentFragment fragment = new FragmentFragment();
 				FragmentManager manager = getSupportFragmentManager();
 				FragmentTransaction transaction = manager.beginTransaction();
 				transaction.add(R.id.relativeLayout_parent_trackeractivity,
