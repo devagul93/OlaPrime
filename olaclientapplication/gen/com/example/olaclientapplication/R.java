@@ -1846,8 +1846,9 @@ containing a value of this type.
         public static final int fragment_driverdetails=0x7f03001d;
         public static final int item_contactlist=0x7f03001e;
         public static final int person_nameoverlay=0x7f03001f;
-        public static final int support_simple_spinner_dropdown_item=0x7f030020;
-        public static final int view_driver_brief=0x7f030021;
+        public static final int push_receive_activity=0x7f030020;
+        public static final int support_simple_spinner_dropdown_item=0x7f030021;
+        public static final int view_driver_brief=0x7f030022;
     }
     public static final class menu {
         public static final int main=0x7f0e0000;

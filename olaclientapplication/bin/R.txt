@@ -515,8 +515,9 @@ int layout dialog_success 0x7f03001c
 int layout fragment_driverdetails 0x7f03001d
 int layout item_contactlist 0x7f03001e
 int layout person_nameoverlay 0x7f03001f
-int layout support_simple_spinner_dropdown_item 0x7f030020
-int layout view_driver_brief 0x7f030021
+int layout push_receive_activity 0x7f030020
+int layout support_simple_spinner_dropdown_item 0x7f030021
+int layout view_driver_brief 0x7f030022
 int menu main 0x7f0e0000
 int string abc_action_bar_home_description 0x7f0b0001
 int string abc_action_bar_home_description_format 0x7f0b0005
