@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.widget.Toast;
 
+import com.parse.ParsePush;
 import com.parse.ParsePushBroadcastReceiver;
 
 public class MyReciever extends ParsePushBroadcastReceiver{
@@ -38,9 +39,12 @@ public class MyReciever extends ParsePushBroadcastReceiver{
 				editor.putBoolean("showDialog", true);
 				editor.commit();
 		Toast.makeText(context, "push recieved", Toast.LENGTH_SHORT).show();
-		Intent i = new Intent(context, MainActivity.class);
+		Intent i = new Intent(context, TrackRideActivity.class);
+		
 		i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 		context.startActivity(i);
+		
+		
 	}
 	
 }

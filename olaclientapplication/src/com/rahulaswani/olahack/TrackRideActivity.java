@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+import com.google.android.gms.internal.ll;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 
@@ -18,9 +19,12 @@ import com.google.android.gms.maps.model.Circle;
 import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.rahulaswani.olahack.InviteDialog.DialogActionListener;
 import com.rahulaswani.olahack.ListDialogSent.DialogActionListenerSent;
 
+import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.location.Location;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
@@ -35,7 +39,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-public class TrackRideActivity extends ActionBarActivity implements
+public class TrackRideActivity extends ActionBarActivity implements DialogActionListener, 
 		DialogActionListenerSent, OnMapClickListener,OnMapLongClickListener, OnCameraChangeListener,
 		OnMapReadyCallback {
 
@@ -162,7 +166,17 @@ public class TrackRideActivity extends ActionBarActivity implements
 		textviewp1 = (TextView) findViewById(R.id.textViewp1);
 		textviewp2 = (TextView) findViewById(R.id.textViewp2);
 		textviewp3 = (TextView) findViewById(R.id.textViewp3);
-
+		
+		SharedPreferences pref = this.getSharedPreferences("MyPrefs", MODE_PRIVATE);
+		SharedPreferences.Editor editor = pref.edit();
+		if(pref.getBoolean("showDialog", false)){
+			InviteDialog dialog = new InviteDialog();
+			dialog.show(getSupportFragmentManager(), "");
+			editor.putBoolean("showDialog", false);
+			editor.commit();
+			linearlayout_f1.setBackgroundColor(Color.parseColor("#5000ff00"));
+		}
+		
 		/*
 		 * for(RelativeLayout l: linlayoutarray){ l.setVisibility(View.GONE); }
 		 */
@@ -349,6 +363,14 @@ public class TrackRideActivity extends ActionBarActivity implements
 	public void onSendClickListener(List<Contact> selected_contacts) {
 		// TODO Auto-generated method stub
 		initialiseFriendsOverlay(selected_contacts);
+	}
+
+	@Override
+	public void onSendItemClickListener() {
+		// TODO Auto-generated method stub
+		linearlayout_f1 = (RelativeLayout) findViewById(R.id.llperson1);
+		linearlayout_f1.setBackgroundDrawable(new ColorDrawable(Color
+				.parseColor("#00ff00")));
 	}
 
 }

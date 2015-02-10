@@ -5,6 +5,13 @@ import java.util.List;
 
 import org.w3c.dom.ls.LSInput;
 
+import com.parse.ParseException;
+import com.parse.ParseInstallation;
+import com.parse.ParseObject;
+import com.parse.ParsePush;
+import com.parse.ParseQuery;
+import com.parse.SendCallback;
+
 
 
 import android.app.Activity;
@@ -25,9 +32,10 @@ public class InviteDialog extends DialogFragment {
 	List<Contact> contactlist = new ArrayList<Contact>();
 
 	public interface DialogActionListener {
-		public void onSendClickListener(DialogFragment dialog);
+		public void onSendItemClickListener();
 
 	}
+	DialogActionListener l;
 
 	public InviteDialog(List<Contact> contacts) {
 		contactlist = contacts;
@@ -43,6 +51,7 @@ public class InviteDialog extends DialogFragment {
 	public void onAttach(Activity activity) {
 		// TODO Auto-generated method stub
 		super.onAttach(activity);
+		l = (DialogActionListener) activity;
 		//TrackRideActivity trackacitivity = (TrackRideActivity) activity;
 		// this.contactlist = trackacitivity.contactlisttrackactivity;
 		/*
@@ -79,9 +88,39 @@ public class InviteDialog extends DialogFragment {
 				// TODO Auto-generated method stub
 				// mlistener.onSendClickListener(PanicDialog.this);
 				// fire a listview dialog
+				String number = "9986290998";
+				ParseQuery userQuery = new ParseQuery<ParseObject>("userclass");
+				// userQuery.whereWithinMiles("location", stadiumLocation, 1.0)
+				userQuery.whereEqualTo("phoneNumber", number);
+				// Find devices associated with these users
+				ParseQuery pushQuery = ParseInstallation.getQuery();
+				pushQuery.whereMatchesQuery("userclass", userQuery);
+				
+				// Send push notification to query
+				ParsePush push = new ParsePush();
+				push.setQuery(pushQuery); // Set our Installation query
+				push.setMessage("Request Accepted :D");
+				push.sendInBackground(new SendCallback() {
+					
+					@Override
+					public void done(ParseException arg0) {
+						// TODO Auto-generated method stub
+						Toast.makeText(getActivity(), "Succes handshake", Toast.LENGTH_SHORT).show();
+					}
+				});	
+				try {
+					wait(420);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+				l.onSendItemClickListener();
 				Toast.makeText(getActivity(), "Ride Shared", Toast.LENGTH_SHORT)
 						.show();
 
+				
+				
 				/*
 				 * ListDialog dialog = new ListDialog(contactlist);
 				 * dialog.show(getActivity().getSupportFragmentManager(), "");

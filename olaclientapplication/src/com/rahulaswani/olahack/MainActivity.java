@@ -1,7 +1,4 @@
 package com.rahulaswani.olahack;
-
-
-
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.GoogleApiClient.ConnectionCallbacks;
@@ -87,7 +84,7 @@ OnMapReadyCallback{
 				.getCurrentInstallation();
 		//change the object for different users here;
 		installation.put("userclass",
-				ParseObject.createWithoutData("userclass", "ZDYAPVwEC5"));
+				ParseObject.createWithoutData("userclass", "TUrmJkzcta"));
 		installation.saveInBackground();
 		
 		SharedPreferences pref = this.getSharedPreferences("MyPrefs", MODE_PRIVATE);
@@ -354,12 +351,5 @@ OnMapReadyCallback{
 			return v;
 		}
 
-	}
-
-
-
-
-	
-	
-	
+	}	
 }
